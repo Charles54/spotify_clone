@@ -4,11 +4,11 @@ import { FaSearch } from 'react-icons/fa'
 import {CgProfile} from 'react-icons/cg'
 import { useStateProvider } from '../utils/StateProvider'
 
-export default function Navbar() {
+export default function Navbar({navBackground}) {
   const [{userInfo}] = useStateProvider();
-  console.log({userInfo}, 'from nav_bar');
+  
   return (
-    <Container>
+    <Container navBackground = {navBackground}>
       <div className="search__bar">
         <FaSearch />
         <input type="text" placeholder='Artists, songs, or podcasts' />
@@ -31,10 +31,10 @@ justify-content: space-between;
 align-items: center;
 padding: 2rem;
 height: 15vh;
-postion: sticky;
+position: sticky;
 top: 0;
 transition: 0.3s ease-in-out;
-background-color: none;
+background-color: ${({navBackground}) => navBackground ? "rgba(0, 0, 0, 0.7)" : "none"};
 .search__bar{
   background-color: white;
   width: 30%;
@@ -73,10 +73,11 @@ background-color: none;
     color: white;
     font-weight: bold;
     svg{
-      font-size: 1.3rem
-      background-color: #282828;
+      font-size: 1.3rem;
+      background-color:#282828;
       padding: 0.2rem;
       color: #c7c5c5;
+      border-radius: 1rem;
       
     }
   }
