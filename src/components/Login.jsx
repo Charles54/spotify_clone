@@ -4,8 +4,8 @@ import styled from 'styled-components'
 export default function Login() {
   const handleClick = () => {
     const clientId = "6cb5b8f765304a2a830434796c7382c9";
-    // const redirectUrl = "http://localhost:3000/";
-    const redirectUrl = "https://spotify-clone-delta-two.vercel.app/";
+    const redirectUrl = "http://localhost:3000/";
+    //const redirectUrl = "https://spotify-clone-delta-two.vercel.app/";
     const apiUrl = "https://accounts.spotify.com/authorize";
     const scope = ['user-read-email', 'user-read-private', 'user-modify-playback-state', 'user-read-playback-state', 'user-read-currently-playing',
   'user-read-recently-played',
